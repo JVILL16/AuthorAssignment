@@ -17,7 +17,7 @@ public class AuthorListLauncher extends Application{
 	private ObservableList<Author> authors;
 	@Override
 	public void start(Stage primaryStage) throws Exception {
-		primaryStage = primaryStage;
+		
 		FXMLLoader loader = new FXMLLoader(this.getClass().getResource("MenuPanelNoView.fxml"));
 		MenuController menuController = new MenuController(authors);
 		loader.setController(menuController);

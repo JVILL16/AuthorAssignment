@@ -12,8 +12,6 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.layout.*;
 import javafx.stage.Stage;
-import sun.plugin.javascript.navig.Anchor;
-
 import javax.swing.text.html.ListView;
 
 public class MenuController implements Initializable {
