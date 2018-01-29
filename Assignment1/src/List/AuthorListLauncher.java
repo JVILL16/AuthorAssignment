@@ -35,7 +35,7 @@ public class AuthorListLauncher extends Application{
 
 		authors = FXCollections.observableArrayList();
 		authors.add(new Author("Ragnar", "Ragnarson", Author.Gender.Male, "https://www.ragnarswebsite.com"));	//Remove after testing
-		authors.add(new Author("Sweetie", "Sweetson", Author.Gender.Female));	//Remove after testing
+		//authors.add(new Author("Sweetie", "Sweetson", Author.Gender.Female));	//Remove after testing
 	}
 
 
