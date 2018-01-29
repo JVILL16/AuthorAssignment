@@ -4,6 +4,9 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
 import javafx.application.Application;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.collections.ObservableList;
@@ -21,6 +24,8 @@ import javafx.scene.layout.GridPane;
 import javafx.stage.Stage;
 
 public class AuthorListController implements Initializable {
+	
+	 private static Logger logger = LogManager.getLogger();
 	
 	 @FXML private ListView<Author> authorList;
 	 private ObservableList<Author> authors;
@@ -43,7 +48,7 @@ public class AuthorListController implements Initializable {
     			stage.setTitle("Detail View for " + authors.getAuthorFullName());
     			stage.show();
     			
-    			//logger.info(authors.getAuthorFullName() + " clicked");
+    			logger.info(authors.getAuthorFullName() + " clicked");
     		}
     	} catch (IOException e) {
     		// TODO Auto-generated catch block
