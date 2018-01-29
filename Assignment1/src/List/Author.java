@@ -1,11 +1,16 @@
 package List;
 
+import javafx.beans.property.ObjectProperty;
+import javafx.beans.property.SimpleObjectProperty;
 import javafx.beans.property.SimpleStringProperty;
+
+import java.time.LocalDate;
+import java.util.Date;
 
 public class Author {
 	
 private SimpleStringProperty authorFirstName, authorLastName, authorWebsite, authorGender;	//Not all of these are great as StringProperties, but for now it'll have to do.
-
+private ObjectProperty<LocalDate> authorBirthDate;
 	public enum Gender{	//Having an enum as a public field should be safe I think, since it's a constant.
 		Male,
 		Female
@@ -16,6 +21,8 @@ private SimpleStringProperty authorFirstName, authorLastName, authorWebsite, aut
 		authorLastName = new SimpleStringProperty();
 		authorWebsite = new SimpleStringProperty();
 		authorGender = new SimpleStringProperty();
+		authorBirthDate = new SimpleObjectProperty<>();
+		//authorBirthDate = new LocalDate(3,3,3);
 		// need the date and last name and more info
 	}
 
@@ -34,7 +41,11 @@ private SimpleStringProperty authorFirstName, authorLastName, authorWebsite, aut
 	}
 	public Author(String authorFirstName, String authorLastName, Gender authorGender, String authorWebsite) {
 		this(authorFirstName, authorLastName, authorGender);
-		setAuthorWebsite(authorWebsite);
+		this.authorWebsite.setValue(authorWebsite);
+	}
+	public Author(String authorFirstName, String authorLastName, Gender authorGender, String authorWebsite, String authorDOBString) {
+		this(authorFirstName, authorLastName, authorGender, authorWebsite);
+		this.authorBirthDate.setValue(LocalDate.parse(authorDOBString));
 	}
 	
 	public boolean isValidAuthorName(String authorName) {
@@ -97,10 +108,8 @@ private SimpleStringProperty authorFirstName, authorLastName, authorWebsite, aut
 		return authorLastName.get();
 	}
 
-	public SimpleStringProperty authorLastNameProperty() {
-		return authorLastName;
-	}
-
+	public ObjectProperty<LocalDate> authorBirthDateProperty() { return authorBirthDate; }
+	public SimpleStringProperty authorLastNameProperty() { return authorLastName;  }
 	public String getAuthorFullName() {
 		return authorFirstName.get() + " " + authorLastName.get();
 	}
@@ -109,8 +118,4 @@ private SimpleStringProperty authorFirstName, authorLastName, authorWebsite, aut
 		this.authorFirstName.set(authorFirstName);
 		this.authorFirstName.set(authorLastName);
 	}
-	
-	public SimpleStringProperty authorNameProperty() {
-		return authorFirstName;
-	}	//This is probably wrong, not too sure what this does.
 }

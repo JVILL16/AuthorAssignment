@@ -56,4 +56,9 @@ public class AuthorListController implements Initializable {
 		// TODO Auto-generated method stub
 			this.authorList.setItems(authors);
 	}
+	@FXML
+	public void switchToAuthorDetailView() throws Exception{
+		SingletonSwitcher.getInstance().switchToAuthorDetailView(authorList.getSelectionModel().getSelectedItem());
+	}
+
 }

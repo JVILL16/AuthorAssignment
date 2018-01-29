@@ -6,8 +6,9 @@
 <?import javafx.scene.control.ListView?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+
+<AnchorPane xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1">
    <children>
-      <ListView fx:id="authorList" onMouseClicked="#onAuthorListClicked" prefHeight="400.0" prefWidth="600.0" />
+      <ListView fx:id="authorList" onMouseClicked="#switchToAuthorDetailView" prefHeight="400.0" prefWidth="600.0" />
    </children>
 </AnchorPane>
