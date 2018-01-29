@@ -23,7 +23,6 @@ public class MenuController implements Initializable {
     public MenuController(ObservableList<Author> authors) {
         this.authors = authors;
     }
-    
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
