@@ -18,7 +18,6 @@ public class MenuController implements Initializable {
 
     @FXML private ObservableList<Author> authors;
     private AuthorListController alController;
-    private VBox root;
 
     public MenuController(ObservableList<Author> authors) {
         this.authors = authors;
@@ -34,12 +33,11 @@ public class MenuController implements Initializable {
     }
     @FXML
     public void switchToAuthorListView() throws Exception{
-        FXMLLoader loader = new FXMLLoader(this.getClass().getResource("AuthorListView.fxml"));
-        loader.setController(new AuthorListController(authors));
-        AnchorPane listPane = loader.load();
-        root.getChildren().add(listPane);
+        SingletonSwitcher.getInstance().switchToAuthorListView();
     }
-    public void setRootPane(Parent rootPane){
-        this.root = (VBox) rootPane;
+
+    @FXML
+    public void switchToAuthorDetailView() throws Exception{
+        SingletonSwitcher.getInstance().switchToAuthorDetailView();
     }
 }

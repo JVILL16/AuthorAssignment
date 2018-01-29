@@ -22,10 +22,11 @@ public class AuthorListLauncher extends Application{
 		MenuController menuController = new MenuController(authors);
 		loader.setController(menuController);
 		Parent rootPane = loader.load();
-		menuController.setRootPane(rootPane);
+		SingletonSwitcher.getInstance().setRootPane(rootPane);
+		SingletonSwitcher.getInstance().setAuthors(authors);
 		Scene menuView = new Scene(rootPane, 600, 400);
 		primaryStage.setScene(menuView);
-		primaryStage.setTitle("List of Authors");
+		primaryStage.setTitle("Single Document Interface Book Inventory System");
 		primaryStage.show();
 
 	}

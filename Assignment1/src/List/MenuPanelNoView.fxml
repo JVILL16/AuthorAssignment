@@ -17,6 +17,7 @@
             <Menu mnemonicParsing="false" text="View">
                <items>
                   <MenuItem mnemonicParsing="false" onAction="#switchToAuthorListView" text="Author List" />
+                  <MenuItem mnemonicParsing="false" onAction="#switchToAuthorDetailView" text="Author Details" />
                </items>
             </Menu>
          </menus>
