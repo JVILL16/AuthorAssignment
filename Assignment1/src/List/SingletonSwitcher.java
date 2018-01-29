@@ -6,7 +6,6 @@ import javafx.scene.Parent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.VBox;
 
-import java.time.LocalDate;
 
 public class SingletonSwitcher {
         private static SingletonSwitcher instance = null;
@@ -14,7 +13,6 @@ public class SingletonSwitcher {
     private AnchorPane listPane;
     private ObservableList<Author> authors;
         protected SingletonSwitcher() {
-            // Exists only to defeat instantiation.
         }
         public static SingletonSwitcher getInstance() {
             if(instance == null) {
@@ -29,10 +27,9 @@ public class SingletonSwitcher {
             root.getChildren().remove(detailBox);
             root.getChildren().add(listPane);
         }
-    public void switchToAuthorDetailView() throws Exception{
+    public void switchToAuthorDetailView(Author author) throws Exception{
         FXMLLoader loader = new FXMLLoader(this.getClass().getResource("AuthorDetailView.fxml"));
-        Author temp = new Author("Ragnar", "Ragnarson", Author.Gender.Male, "http://www.ah-the-aliens-are-abducting-me.biz", "2016-08-16");
-        loader.setController(new AuthorDetailController(temp));   //Just for testing
+        loader.setController(new AuthorDetailController(author));   //Just for testing
         detailBox = loader.load();
         root.getChildren().remove(listPane);
         root.getChildren().add(detailBox);

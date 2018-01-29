@@ -35,9 +35,4 @@ public class MenuController implements Initializable {
     public void switchToAuthorListView() throws Exception{
         SingletonSwitcher.getInstance().switchToAuthorListView();
     }
-
-    @FXML
-    public void switchToAuthorDetailView() throws Exception{
-        SingletonSwitcher.getInstance().switchToAuthorDetailView();
-    }
 }
