@@ -35,10 +35,8 @@ public class AuthorListController implements Initializable {
 	 }
    @FXML void onAuthorListClicked(MouseEvent event) {
     	try {
-
     		Author authors = authorList.getSelectionModel().getSelectedItem();
     		if(authors != null) {
-    			//display detail of clicked dog
     			FXMLLoader loader = new FXMLLoader(this.getClass().getResource("AuthorDetailView.fxml"));
     			loader.setController(new AuthorDetailController(authors));
     			GridPane rootPane = loader.load();

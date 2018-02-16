@@ -7,6 +7,12 @@ import javafx.beans.property.SimpleStringProperty;
 import java.time.LocalDate;
 import java.util.Date;
 
+
+/**
+ * 
+ * @author CS 4743 Assignment 1 by Jheremi Villarreal and Manuel Gomez
+ *
+ */
 public class Author {
 	
 private SimpleStringProperty authorFirstName, authorLastName, authorWebsite, authorGender;	//Not all of these are great as StringProperties, but for now it'll have to do.
